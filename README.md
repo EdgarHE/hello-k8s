@@ -38,15 +38,15 @@ Annotations let you associate arbitrary metadata with k8s objects.
 
 
 ## Pod
-[Pod](pod/README.md)
+- [Pod](pod/README.md)
 
 
 ## ReplicaSet/ Deployment
-[ReplicaSet/ Deployment](deployment/README.md)
+- [ReplicaSet/ Deployment](deployment/README.md)
 
 
 ## ReplicaSet/ Deployment/ Service
-[Service](service/README.md)
+- [Service](service/README.md)
 
 
 ## Volume/ ConfigSet/ Secret
@@ -54,7 +54,6 @@ Annotations let you associate arbitrary metadata with k8s objects.
 
 
 ## TP
-### [Wordpress]
+### Wordpress
 - [TP Wordpress](tp/wordpress/README.md)
-
 
