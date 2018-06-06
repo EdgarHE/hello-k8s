@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-configmap-vol
+spec:
+  restartPolicy: Never
+  containers:
+    - name: ct-debian
+      image: debian
+      command: [ "/bin/sh", "-c", "sleep 3000" ]
+      volumeMounts:
+      - name: config-vol
+        mountPath: /etc/config
+  volumes:
+    - name: config-vol
+      configMap:
+        name: config1
