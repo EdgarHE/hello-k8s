@@ -45,7 +45,7 @@ Annotations let you associate arbitrary metadata with k8s objects.
 - [ReplicaSet/ Deployment](deployment/README.md)
 
 
-## ReplicaSet/ Deployment/ Service
+## Service
 - [Service](service/README.md)
 
 
