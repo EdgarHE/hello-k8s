@@ -29,6 +29,9 @@ Mount Config to pod as volume
 - `kubectl exec -it POD_ID -- /bin/bash`
 
 ### Secret
+Get GUI access token
+- `kubectl -n kube-system get secret`
+- `kubectl -n kube-system describe secret admin-user-token-qtnxw`
 
 
 ## Persistent Volume
