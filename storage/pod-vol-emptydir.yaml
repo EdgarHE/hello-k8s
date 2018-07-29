@@ -1,19 +1,17 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: pod-vol-hostpath
+  name: storage-vol-emptydir
 spec:
   restartPolicy: Never
   volumes:
-  - name: data
-    hostPath:
-      path: /tmp
-      type: Directory
+  - name: data-vol
+    emptyDir: {}
 
   containers:
-  - name: ct-debian
+  - name: debian-vol-emptydir
     image: debian
     volumeMounts:
-    - name: data
+    - name: data-vol
       mountPath: /data
     command: ['/bin/sh', '-c', 'sleep 3000']

@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: pod-configmap-vol
+  name: storage-cm-vol
 spec:
   restartPolicy: Never
   containers:
-    - name: ct-debian
+    - name: debian-cm-vol
       image: debian
       command: [ "/bin/sh", "-c", "sleep 3000" ]
       volumeMounts:
@@ -14,4 +14,4 @@ spec:
   volumes:
     - name: config-vol
       configMap:
-        name: config1
+        name: storage

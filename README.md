@@ -20,7 +20,7 @@ k8s coordinates a highly available cluster of computers that are connected to wo
 - `kubectl describe node minikube`: detail about a node
 - `kubectl logs RESOURCE_ID`: logs
 - `kubectl proxy`: create a proxy, all request to `localhost:8001` will be requested to *api-server*
-  - test: `curl http://localhost:8001/version`
+  - `curl http://localhost:8001/version`: test
 - `kubectl get namespaces`: list namespaces
 - `kubectl --namespace=NS_ID get pods`: execute CMD within 1 namespace
 
@@ -37,20 +37,11 @@ Labels are key-value pairs that are used to group together sets of objects, very
 Annotations let you associate arbitrary metadata with k8s objects. 
 
 
-## Pod
+## Object Resources
 - [Pod](pod/README.md)
-
-
-## ReplicaSet/ Deployment
-- [ReplicaSet/ Deployment](deployment/README.md)
-
-
-## Service
+- [Deployment including replicaset, deployment](deployment/README.md)
 - [Service](service/README.md)
-
-
-## Volume/ ConfigSet/ Secret
-- [Volume/ ConfigSet/ Secret](volume/README.md)
+- [Storage including volume, configmap, secret PV, PVC, storage class](storage/README.md)
 
 
 ## TP
