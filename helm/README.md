@@ -17,7 +17,11 @@
 - 服务器端Tiller：用来调用k8s api-server
 
 
-## CMD
+## Installation
+- [installation](installation/README.md)
+
+
+## Manipulation
 - `helm init`：install Tiller
 - `helm version`:
 
