@@ -12,6 +12,10 @@
 - svc1
   - `helm install --name ic1-svc1 ./charts/svc1`
 
+### Usage
+- `kubect get ingress -o wide`: check if the backend endpoints are bound
+- `curl --resolve mywebsite.com:80:192.168.18.3 http://mywebsite.com/demo`
+- `curl -H 'Host:mywebsite.com' http://192.168.18.3/demo/`
 
 ## Troubleshoot
 - `kubectl exec -it POD_ID grep proxy_pass /etc/nginx/nginx.conf`：查看ingress自动生成`nginx.conf`文件

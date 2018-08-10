@@ -5,6 +5,18 @@ Atomic unit in k8s, *it always runs on 1 node*.
 - networking: all the containers in 1 pod use a unique IP address, communicate with one another using `localhost`
 - scalability: increase or decrease the number of pods
 
+
+## Network
+- hostPort: launch hostPort network mode, and set new hostPort
+- hostNetwork: true
+
+
+## Static Pod
+Pod only exists on a node, managed by the local kubelet.  
+It cannot be managed by the API server, so it cannot be managed by ReplicationController, Deployment or DaemonSet.
+
+
+
 ## CMD
 - `kubectl get pods`: list pods
 - `kubectl describe pods`: describe pods
@@ -36,59 +48,3 @@ Atomic unit in k8s, *it always runs on 1 node*.
   - `curl pod2_IP`: to get the hello message from the node
 
 ### TP3: 1 Pod with 2 Services
-
-## YAML
-[example](pod.yml)
-- apiVersion: v1
-- kind: Pod
-- Metadata: 
-  - name: string
-  - namespace: string
-  - labels: 
-    - name: string
-  - annotations: 
-    - name: string
-- spec
-  containers:
-    - name: sting
-      image: string
-      command: [string]
-      workingDir: string
-      volumeMounts: 
-      - name: string
-        mountPath: string
-        readOnly: boolean
-      ports: 
-      - name: string
-        containerPort: int
-        hostPort: int
-        protocol: string
-      env: 
-      - name: string
-        volue: string
-      resources: 
-        limits: 
-          cpu: string
-          memory: string
-        requests: 
-          cpu: string
-          memory: string
-  nodeSelector: object
-  hostNetwork: false
-  volumes: 
-  - name: string
-    emptyDir: {}
-    hostPath: 
-      path: string
-    secret: 
-      secretName: string
-      items: 
-      - key: string
-        path: string
-    configMap: 
-      name: string
-      items: 
-      - key: string
-        path: string
-
-## TODO

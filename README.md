@@ -1,5 +1,5 @@
 # Kubernetes/ K8S
-k8s coordinates a highly available cluster of computers that are connected to work as a single unit.
+k8s coordinates a highly available cluster of servers/nodes that are connected to work as a single unit.
 
 
 ## Installation & Configuration
@@ -8,11 +8,21 @@ k8s coordinates a highly available cluster of computers that are connected to wo
 - `minikube dashbor`: check
 
 
-## Cluster/ Master/ Node/ Namespace
+## Basic Concept
+### Cluster/ Master/ Node/ Namespace
 - cluster: 1 master + n nodes
 - master: a VM or a physical machine which coordinates the cluster
 - node/worker: a VM or a physical machine which serves as a worker that runs applications
 - namespace: virtual cluster for resource isolation
+
+### Port
+- pod
+  - containerPort: Docker image/container's exposed port 
+- service
+  - targetPort: pod's containerPort
+  - port: service's port, clusterIP's port
+  - nodePort: node's exposed port for the service
+
 
 ### CMD
 - `kubectl cluster-info`
@@ -39,9 +49,14 @@ Annotations let you associate arbitrary metadata with k8s objects.
 
 ## Object Resources
 - [Pod](pod/README.md)
-- [Deployment including replicaset, deployment](deployment/README.md)
+- [ReplicaSet, Deployment, DaemonSet, StatefulSet](deployment/README.md)
 - [Service](service/README.md)
-- [Storage including volume, configmap, secret PV, PVC, storage class](storage/README.md)
+- [Storage including Volume, Persistent Volume/ PVC, ConfigMap, Secret](storage/README.md)
+- [Network including Ingress](network/README.md)
+
+
+## Helm
+- [Helm](helm/README.md)
 
 
 ## TP

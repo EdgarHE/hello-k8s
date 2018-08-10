@@ -1,7 +1,16 @@
-# Service
+# Service & Headless
+## Service
 A service routes traffic across a set of pods.
+- targetPort: port exposed by pods. if targetPort is not present, it supposed to be the same as port. 
+- port: port exposed by services
+- nodeIP: IP of the physical server
+- pod IP: created be Docker engine
+- cluster IP: create by k8s service
 
-## CMD
+### Network Mode
+- nodePort: 
+
+### CMD
 - `kubectl get services`: list services
 - `kubectl get services SVC_ID`: list a service
 - `kubectl describe services`: describe services
@@ -10,6 +19,10 @@ A service routes traffic across a set of pods.
   - `curl $(minikube ip):NODE_PORT`: test
 - `kubectl create -f service.yaml`: create a service from a YAML file
 - `kubectl delete service -l name=label`: delete a service by label
+
+
+## Headless Service
+Without cluster IP, it maps directly to pod endpoints. 
 
 ## TP
 ### TP1: NodePort
@@ -23,22 +36,3 @@ A service routes traffic across a set of pods.
 - `kubectl get svc`: get the clusterIP and port of the service
 - `minikube ssh`: access to the master/node
   - `curl clusterIP:port`: test. *ping clusterIP doesnt' work, clusterIP should be bind with port*
-
-
-### YAML
-```yaml
-apiVersion: v1
-kind: Service
-metadata:
-  name: svc1
-spec:
-  selector:
-    app: nginx
-  type: NodePort
-  ports:
-  - protocol: TCP
-    targetPort: 80
-    port: 8888
-    nodePort: 30888
-
-```
