@@ -17,10 +17,10 @@ k8s coordinates a highly available cluster of servers/nodes that are connected t
 
 ### Port
 - pod
-  - containerPort: Docker image/container's exposed port 
+  - containerPort: Docker image/container's exposed port
 - service
-  - targetPort: pod's containerPort
-  - port: service's port, clusterIP's port
+  - targetPort: *pod's containerPort*
+  - port: service's port, clusterIP's port. If not specified, use the same as targetPort 
   - nodePort: node's exposed port for the service
 
 

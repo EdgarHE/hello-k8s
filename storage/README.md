@@ -34,16 +34,14 @@ PVC is used to create a PV which will be later declared and used in a pod.
 
 ## ConfigMap
 We can consider ConfigMap as a PV/dir which contains a set of *variables* or files.  
+- variables (key-value): if cm is mounted, key is displayed as file in the dir, value as content of the file
+- file: if cm is mounted, file is displayed as fil in the dir
 
 ### Creation
-Create from a YAML file
-- `kubectl create -f cm.yaml`
-- `kubectl get cm`
-
-Create from a host dir or file
-- `kubectl create configmap cm1 --from-file=./configs`
-- `kubectl create configmap cm2 --from-file=./configs/db.conf --from-file=./configs/cache.conf`
-- `kubectl get configmap`
+- `kubectl create -f cm.yaml`: create from a YAML file
+- `kubectl create configmap cm1 --from-file=./configs`: create from a host dir 
+- `kubectl create configmap cm2 --from-file=./configs/db.conf --from-file=./configs/cache.conf`: create from a host file
+- `kubectl create configmap cm3 --from-literal=key1=value1`: create from a key-value
 
 ### Usage
 Pass Config to pod as env
@@ -53,6 +51,7 @@ Pass Config to pod as env
 Mount Config to pod as volume
 - `kubectl create -f pod-cm-vol.yaml`
 - `kubectl exec -it storage-cm-env -- /bin/bash`
+
 
 ## Secret
 - `kubectl create -f secret.yaml`

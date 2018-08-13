@@ -1,4 +1,4 @@
-# ReplicaSet/ Deployment
+# ReplicaSet/ Deployment/ Job/ Cronjob/ StatefulSet
 ## ReplicaSet
 ReplicaSet ensures a fixed number of running pods through selector which is the next generation of ReplicaController.
 *It is recommended to be replaced by Deployment.*
@@ -6,6 +6,14 @@ ReplicaSet ensures a fixed number of running pods through selector which is the 
 - `kubectl get replicasets`: list replicasets
 - `kubectl delete replicasets $REPLICASET_ID`: delete replicaset
 [ReplicaSet YAML example](replicaset.yaml)
+
+### NodeSelector
+- `kubectl label nodes NODE_ID zone=xxx`
+- `vim rs.yaml`
+
+    spec/containers/
+      nodeSelector:
+        zone: north  
 
 
 ## Deployment
@@ -16,15 +24,16 @@ The main difference between RS and Deployment is that Deployment may 2 RS for ro
   - rolling update: create a new deploy to increase and decrease the old one
 *Deployment doesn't handle the network access.*
 
-### initContainer
-
-
-### CMD
 - `kubectl get deployments`: list deployments
 - `kubectl run nginx --image=IMG --port=80 --replicas=3`: create a deployment through a CMD
 - `kubectl create -f DEP.yaml`: create a deployment through a YAML file
-- `kubectl scale deployments DEP_ID --replicas=4`: scale up
 - `kubectl edit deployment DEP_ID`: edit deployment
+
+### Scaling
+- `kubectl scale deployments DEP_ID --replicas=4`: scale up
+
+### Upgrade/ Rollout
+- `kubectl rolling-update DPL_ID -f xxx-dpl.yaml`
 - `kubectl set image deployment DEP_ID IMG_ID=nginx:latest`: upgrade image
 - `kubectl rollout status deployment DEP_ID`: set rollout status
 
