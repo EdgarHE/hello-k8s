@@ -7,7 +7,7 @@ replicaCount: 1
 image:
   repository: bigwhite/ingress-controller-demo-svc7
   tag: v0.1
-  pullPolicy: Always
+  pullPolicy: IfNotPresent
 
 service:
   type: ClusterIP
