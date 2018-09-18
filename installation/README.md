@@ -29,9 +29,3 @@ minikube is a single-node (VM) cluster
 - `minikube ssh`: ssh to minikube
 - `kubectl version`: check version
 - `kubectl cluster-info`: check cluster info
-
-
-## kubeadm
-kubeadm is a production version.
-- [kubeadm Installation](kubeadm/README.md)
-

@@ -29,8 +29,6 @@ k8s coordinates a highly available cluster of servers/nodes that are connected t
 - `kubectl get nodes -o yaml`: -o output format
 - `kubectl describe node minikube`: detail about a node
 - `kubectl logs RESOURCE_ID`: logs
-- `kubectl proxy`: create a proxy, all request to `localhost:8001` will be requested to *api-server*
-  - `curl http://localhost:8001/version`: test
 - `kubectl get namespaces`: list namespaces
 - `kubectl --namespace=NS_ID get pods`: execute CMD within 1 namespace
 
@@ -53,10 +51,6 @@ Annotations let you associate arbitrary metadata with k8s objects.
 - [Service](service/README.md)
 - [Storage including Volume, Persistent Volume/ PVC, ConfigMap, Secret](storage/README.md)
 - [Network including Ingress](network/README.md)
-
-
-## Helm
-- [Helm](helm/README.md)
 
 
 ## TP
