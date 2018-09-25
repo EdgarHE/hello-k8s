@@ -39,7 +39,7 @@ The main difference between RS and Deployment is that Deployment may 2 RS for ro
 ### Example
 - `kubectl create -f deployment.yaml`: create a deployment with 2 replicas
 - `kubectl get deployment`
-- `kubectl describe DEP_ID`: to get IP address
+- `kubectl describe deployment DEP_ID`: to get IP address
 - `curl POD_IP`: check the nginx server
 - `kubectl scale deployment DEP_ID --replicas=3`: scale out
 - `kubectl set image deployment DEP_ID IMG_ID=nginx:latest`: update image
