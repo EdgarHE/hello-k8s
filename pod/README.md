@@ -46,8 +46,6 @@ pod-level storage which will be deleted when pod is destroyed.
   - `apt-get install curl`
   - `curl localhost`: to get the hello message from the container
 - `kubectl describe pod pod2`: to get IP addresss
-- `minikube ssh`
-  - `curl pod2_IP`: to get the hello message from the node
 - `kubectl exec -it pod2 -c ct-debian -- /bin/bash`
   - `echo Chanage message from pod2-ct-debian > /data/index.html `
 - `minikube ssh`
