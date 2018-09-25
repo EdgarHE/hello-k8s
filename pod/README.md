@@ -48,5 +48,3 @@ pod-level storage which will be deleted when pod is destroyed.
 - `kubectl describe pod pod2`: to get IP addresss
 - `kubectl exec -it pod2 -c ct-debian -- /bin/bash`
   - `echo Chanage message from pod2-ct-debian > /data/index.html `
-- `minikube ssh`
-  - `curl pod2_IP`: to get the hello message from the node
